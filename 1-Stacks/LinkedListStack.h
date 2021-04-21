@@ -59,8 +59,10 @@ public:
 	{
 		if (isEmpty()) return false;
 
-		TopEntry = items[top];
-		top--;
+		TopEntry = Head->getItem();
+		Node<T>* ptr = Head;
+		Head = Head->getNext();
+		delete ptr;
 		return true;
 	}  // end pop
 
@@ -68,32 +70,32 @@ public:
 	{
 		if (isEmpty()) return false;
 
-		TopEntry = items[top];
+		TopEntry = Head->getItem();
 		return true;
 	}  // end peek
 
 	   //Destructor
-	~ArrayStack()
+	~LinkedListStack()
 	{
-		delete[]items;
+		Node<T>* ptr = Head;
+		while (ptr)
+		{
+			Node<T>* temp = ptr;
+			ptr = ptr->getNext();
+			delete temp;
+		}
 	}
 
-	//Copy constructor
-	LinkedListStack(const LinkedListStack<T>& S) :STACK_SIZE(S.STACK_SIZE)
-	{
-		items = new T[STACK_SIZE];
-		for (int i = 0; i <= S.top; i++)
-			items[i] = S.items[i];
-		top = S.top;
-	}
-	LinkedListStack<T>& operator = (const LinkedListStack<T>& S)
-	{
-		items = new T[STACK_SIZE];
-		for (int i = 0; i <= S.top; i++)
-			items[i] = S.items[i];
-		top = S.top;
-		return *this;
-	}
+	////Copy constructor
+	//LinkedListStack(const LinkedListStack<T>& S) :STACK_SIZE(S.STACK_SIZE)
+	//{
+
+	//}
+	////Assignment operator
+	//LinkedListStack<T>& operator = (const LinkedListStack<T>& S)
+	//{
+
+	//}
 
 }; 
 

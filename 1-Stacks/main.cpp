@@ -1,5 +1,6 @@
 
 #include "ArrayStack.h"	
+#include "LinkedListStack.h"	
 #include <iostream>		//To use C++ console I/O functionality
 						//, we need to include iostream which contains necessary declarations.
 using namespace std;	//This statement enables us to use classes and objects in the standard C++ library
@@ -12,7 +13,7 @@ using namespace std;	//This statement enables us to use classes and objects in t
 int main()
 {
 	//Declare a Stack of integers named "S" and with max size = 10 elements
-	ArrayStack<int> S(10);
+	LinkedListStack<int> S(10);
 
 	int i,x,n;
 
@@ -32,14 +33,14 @@ int main()
 
 	cout << endl<<"Popping: ";
 
-	while(S.pop(x))		//as long as pop returns true, so x contains a valid value		
-		cout << x << " ";
+	//while(S.pop(x))		//as long as pop returns true, so x contains a valid value		
+	//	cout << x << " ";
 
 	/// ==> [CheckPoint 1]
 	//After 1st run, comment the above while loop and uncomment the while loop below
 
-	//while(S.peek(x))		//as long as peek returns true, so x contains a valid value		
-		//cout << x << " ";
+	while(S.peek(x))		//as long as peek returns true, so x contains a valid value		
+		cout << x << " ";
 
 	
 	cout<<endl;
