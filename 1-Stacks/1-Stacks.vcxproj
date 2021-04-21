@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayStack.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="StackADT.h" />
   </ItemGroup>

@@ -8,26 +8,23 @@ using namespace std;
 template <typename T>
 void PrintStack(ArrayStack<T> S)
 {
-	
 	cout << endl<<"Printing stack contents: ";
-
 	T x;
 	while(S.pop(x))		
 		cout << x << " ";
-	
 	cout<<endl;
 }
 
 //A function that takes a ArrayStack<T> S and returns its reverse (without affecting the orignal stack)
 template <typename T>
-ArrayStack<T> Reverse(ArrayStack<T> S)
+void ReverseMe(ArrayStack<T>& S)
 {
 	ArrayStack<T> Rev(S.getCapacity());	//First creat a stack 
 	T Item;
 	while(S.pop(Item))	//pop from S
 		Rev.push(Item); //push into Rev
+	S = Rev;
 
-	return Rev;
 }
 
 //A function that takes a ArrayStack<T> S and replaces all occurrances of "value" with "newValue" (if found)
@@ -57,11 +54,6 @@ bool ReplaceAll(ArrayStack<T> & Source, T value, T newValue)	//Source is passe b
 	return found;
 }
 
-
-
-
-
-
 int main()
 
 {
@@ -84,26 +76,28 @@ int main()
 	cout<<"\nstack1 contents\n";
 	PrintStack(stack1);
 
-	int a, b;
-	cout << "\nEnter a value to replace:";
-	cin >> a;
-	cout << "\nEnter the new value:";
-	cin >> b;
+	//int a, b;
+	//cout << "\nEnter a value to replace:";
+	//cin >> a;
+	//cout << "\nEnter the new value:";
+	//cin >> b;
 
-	bool isFound = ReplaceAll(stack1, a, b);
-	if (isFound)
-		cout << "\nValue replaced";
-	else
-		cout << "\nValue not found";
-	PrintStack(stack1);
+	//bool isFound = ReplaceAll(stack1, a, b);
+	//if (isFound)
+	//	cout << "\nValue replaced";
+	//else
+	//	cout << "\nValue not found";
+	//PrintStack(stack1);
 
 
-	ArrayStack<int> stack2 = Reverse(stack1);
+	//ArrayStack<int> stack2 = Reverse(stack1);
+
+	ReverseMe(stack1);
 
 	cout<<"\nAfter Reverse...\nstack1 contents\n";
 	PrintStack(stack1);
-	cout<<"\nstack2 contents\n";
-	PrintStack(stack2);
+	//cout<<"\nstack2 contents\n";
+	//PrintStack(stack2);
 
 
 

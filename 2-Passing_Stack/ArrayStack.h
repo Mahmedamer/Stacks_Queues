@@ -79,7 +79,14 @@ public:
 			items[i] = S.items[i];
 		top = S.top;
 	}
-
+	ArrayStack<T>& operator = (const ArrayStack<T>& S)
+	{
+		items = new T[STACK_SIZE];
+		for (int i = 0; i <= S.top; i++)
+			items[i] = S.items[i];
+		top = S.top;
+		return *this;
+	}
 
 }; // end ArrayStack
 

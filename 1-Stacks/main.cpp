@@ -1,5 +1,6 @@
 
 #include "ArrayStack.h"	
+#include "Car.h"	
 #include "LinkedListStack.h"	
 #include <iostream>		//To use C++ console I/O functionality
 						//, we need to include iostream which contains necessary declarations.
@@ -13,8 +14,11 @@ using namespace std;	//This statement enables us to use classes and objects in t
 int main()
 {
 	//Declare a Stack of integers named "S" and with max size = 10 elements
-	LinkedListStack<int> S(10);
-
+	ArrayStack<int> S(10);
+	//Car c1(10, 1001), c2(11,1002),c3(12,1003);
+	//S.push(&c1);
+	//S.push(&c2);
+	//S.push(&c3);
 	int i,x,n;
 
 	cout<<"\nEnter no. of values to push into stack:";
@@ -33,20 +37,20 @@ int main()
 
 	cout << endl<<"Popping: ";
 
-	//while(S.pop(x))		//as long as pop returns true, so x contains a valid value		
-	//	cout << x << " ";
+	while(S.pop(x))		//as long as pop returns true, so x contains a valid value		
+		cout << x << " ";
 
 	/// ==> [CheckPoint 1]
 	//After 1st run, comment the above while loop and uncomment the while loop below
 
-	while(S.peek(x))		//as long as peek returns true, so x contains a valid value		
-		cout << x << " ";
+	//while(S.peek(x))		//as long as peek returns true, so x contains a valid value		
+	//	cout << x << " ";
 
 	
 	cout<<endl;
 
-	cout<<"Testing function isEmpty ==> is S Empty?? ==> "<<boolalpha<<S.isEmpty();
-	cout<<endl;
+	//cout<<"Testing function isEmpty ==> is S Empty?? ==> "<<boolalpha<<S.isEmpty();
+	//cout<<endl;
 	return 0;
 }
   

@@ -1,5 +1,6 @@
 
 #include "LinkedQueue.h"
+#include "ArrayQueue.h"
 #include <iostream>		//To use C++ console I/O functionality
 						//, we need to include iostream which contains necessary declarations.
 
@@ -11,7 +12,8 @@ int main()
 
 
 	//Declare a queue of integers named "Q"
-	LinkedQueue<int> Q;
+	//LinkedQueue<int> Q;
+	ArrayQueue<int> Q(10);
 	int x;
 
 	//Test the queue by enqueue 6, 7, 8, 9 and 10 then dequeue them.
@@ -22,7 +24,7 @@ int main()
 	for(int i = 0; i < 5; i++)
 	{
 		cin>>x;
-		Q.enqueue(x); //pushing x to stack2
+		Q.enqueue(x); //pushing x to Q
 	}
 
 	cout << "Testing dequeue operation:\n ";
